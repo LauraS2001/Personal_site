@@ -1,0 +1,108 @@
+<mat-sidenav-container class="h-full w-full" style="display: flex; flex: 1 1 auto;" [style.background-color]="settingsColor.content">
+    <mat-sidenav #sidenav mode="over" [opened]="isExpanded" position="end" class="h-full z-50 rounded-none" [style.background-color]="settingsColor.toolbar"
+                [ngClass]="{'isExpanded':isExpanded, 'notExpanded':!isExpanded}">
+        <!-- HEADER -->
+        <header class="flex justify-between w-full h-15 p-2" [style.background-color]="themeColor">
+            <div class="flex">
+                <img src="assets/images/settings.png" style="transform: scale(0.5);">
+                <span class="text-3xl text-white self-center">Settings</span>
+            </div>
+            <button mat-icon-button class="self-center justify-self-end" (click)="ExpandSidenav()">
+                <mat-icon [style.color]="settingsColor.icon">close</mat-icon>
+            </button>
+        </header>
+
+        <!-- BODY -->
+        <div class="flex flex-col p-6">
+            <div>
+                <p [style.color]="settingsColor.text">SCHEME</p>
+                <div class="flex justify-between mt-6">
+                    <div class="flex items-center justify-center px-4 py-3 rounded-full cursor-pointer bg-hover buttonTheme" [style.background-color]="settingsColor.button" [style.color]="settingsColor.text" (click)="ChangeMode('dark')">
+                        <mat-icon [style.color]="settingsColor.icon">dark_mode</mat-icon>
+                        <span class="px-3">Dark</span>
+                    </div>
+                    <div class="flex items-center justify-center px-4 py-3 rounded-full cursor-pointer bg-hover buttonTheme" [style.background-color]="settingsColor.button" [style.color]="settingsColor.text" (click)="ChangeMode('light')">
+                        <mat-icon class="text-amber-200">light_mode</mat-icon>
+                        <span class="px-3">Light</span>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6">
+            <div>
+                <p [style.color]="settingsColor.text">THEME</p>
+                <div class="grid grid-cols-2 gap-3 mt-6">
+                    <div>
+                        <div class="flex items-center justify-center px-4 py-3 rounded-full cursor-pointer bg-hover buttonTheme"
+                            [style.background-color]="settingsColor.button" [style.color]="settingsColor.text" (click)="ChangeColor('#1E52D9')">
+                            <div class="flex-0 w-3 h-3 rounded-full bg-blue-600"></div>
+                            <span class="px-3">Blue</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-center px-4 py-3 rounded-full cursor-pointer bg-hover buttonTheme"
+                            [style.background-color]="settingsColor.button" [style.color]="settingsColor.text" (click)="ChangeColor('#D97706')">
+                            <div class="flex-0 w-3 h-3 rounded-full bg-amber-600"></div>
+                            <span class="px-3">Amber</span>
+                    </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-center px-4 py-3 rounded-full cursor-pointer bg-hover buttonTheme "
+                            [style.background-color]="settingsColor.button" [style.color]="settingsColor.text" (click)="ChangeColor('#DC2626')">
+                            <div class="flex-0 w-3 h-3 rounded-full bg-red-600"></div>
+                            <span class="px-3">Red</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-center px-4 py-3 rounded-full cursor-pointer bg-hover buttonTheme"
+                            [style.background-color]="settingsColor.button" [style.color]="settingsColor.text" (click)="ChangeColor('#0D9488')">
+                            <div class="flex-0 w-3 h-3 rounded-full bg-teal-600"></div>
+                            <span class="px-3">Teal</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-center px-4 py-3 rounded-full cursor-pointer bg-hover buttonTheme"
+                            [style.background-color]="settingsColor.button" [style.color]="settingsColor.text" (click)="ChangeColor('#7C3AED')">
+                            <div class="flex-0 w-3 h-3 rounded-full bg-violet-600"></div>
+                            <span class="px-3">Violet</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-center px-4 py-3 rounded-full cursor-pointer bg-hover buttonTheme"
+                            [style.background-color]="settingsColor.button" [style.color]="settingsColor.text" (click)="ChangeColor('#4F46E5')">
+                            <div class="flex-0 w-3 h-3 rounded-full bg-indigo-600"></div>
+                            <span class="px-3">Indigo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content class="flex flex-col w-full h-full" [ngClass]="{'overlay': isExpanded}">
+        <!-- TOOLBAR -->
+        <mat-toolbar class="h-14 w-fit self-center rounded-full mt-5 shadow dark:shadow-none dark:border-b bg-card dark:bg-transparent print:hidden" [style.background-color]="settingsColor.toolbar">
+            <button mat-button class="transition-colors mx-2 buttonToolbar" [style.color]="settingsColor.text" (click)="NavigateHome()">About me
+                <mat-icon [svgIcon]="'user'"></mat-icon>
+            </button>
+            <button mat-button class="transition-colors mx-2 buttonToolbar" [style.color]="settingsColor.text">Projects
+                <mat-icon [svgIcon]="'project'"></mat-icon>
+            </button>
+            <button mat-button class="transition-colors mx-2 buttonToolbar" [style.color]="settingsColor.text" (click)="NavigateCV()">Curriculum
+                <mat-icon [svgIcon]="'cv'"></mat-icon>
+            </button>
+            <div>
+                <img >
+            </div>
+            <button mat-mini-fab (click)="ExpandSidenav()" [ngClass]="{'buttonOpenSideNav': !isExpanded, 'buttonOpenSideNavExpanded': isExpanded}">
+                <mat-icon class="hover:animate-spin-slow">
+                    <img src="assets/images/settings.png">
+                </mat-icon>
+            </button>
+        </mat-toolbar>
+        
+        <div class="w-full h-full" [style.background-color]="settingsColor.content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,27 @@
+@keyframes wave {
+    0%, 10% { 
+      transform: rotate(0deg);  /* Posizione iniziale */
+    }
+    20% { 
+      transform: rotate(20deg); /* Primo saluto - rotazione massima */
+    }
+    30% { 
+      transform: rotate(0deg);  /* Ritorna alla posizione iniziale */
+    }
+    40% { 
+      transform: rotate(20deg); /* Secondo saluto - rotazione massima */
+    }
+    50% { 
+      transform: rotate(0deg);  /* Ritorna alla posizione iniziale */
+    }
+    100% { 
+      transform: rotate(0deg);  /* Rimane fermo nella posizione iniziale (pausa) */
+    }
+  }
+  
+  .hand_animation {
+    display: inline-block;
+    font-size: 3rem; /* Dimensione dell'emoji */
+    animation: wave 3s ease-in-out infinite; /* Ciclo di 3 secondi per avere pausa tra due movimenti */
+  }
+  

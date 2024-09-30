@@ -1,0 +1,48 @@
+
+<div class="Container">
+    <div class="projectIcon">
+    
+      <!-- <img src="assets/img/user.png" style="width: 28%; max-width: 400px;"> -->
+      <div class="loginSection">
+        <div class="loginFields">
+          <div class="loginHeader">
+            <p class="header">Welcome back</p>
+            <span class="subtitle">Please enter your credentials</span>
+          </div>
+  
+          <form [formGroup]="loginForm" class="loginForm">
+            <div class="forms">
+                <p class="usernamePassword" [ngClass]="{'loginError': errorMessage}">Username or Email Address</p>
+                <div class="loginTags" [ngClass]="{'loginError': errorMessage}">
+                    <input matInput required type="text" matInput formControlName="username" class="loginInput">
+                    <button mat-icon-button matSuffix class="emailButton" disabled>
+                    <mat-icon>email</mat-icon>
+                    </button>
+                </div>
+            </div>
+  
+            <div class="forms">
+                <p class="usernamePassword" [ngClass]="{'loginError': errorMessage}">Password</p>
+                <div class="loginTags" [ngClass]="{'loginError': errorMessage}">
+                    <input matInput required [type]="hidePassword ? 'password' : 'text'" formControlName="password" class="loginInput">
+                    <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
+                        [attr.aria-label]="'Hide password'" class="hideButton"
+                        [attr.aria-pressed]="hidePassword" tabindex="-1">
+                    <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </div>
+            </div>
+  
+            <div *ngIf="errorMessage" class="error">
+              <span>{{errorMessage}}</span>
+            </div>
+  
+            <div class="loginAction">
+              <button mat-raised-button class="loginButton" (click)="Submit()">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+

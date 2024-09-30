@@ -1,0 +1,156 @@
+.Container {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    background-color:#7dc1f8 ;
+    background-image: linear-gradient(to bottom right, #5e78fa, #7dfcc9);
+
+    // background-image: linear-gradient(to bottom right, #536df3, #31eea2);
+    // background-image: linear-gradient(to bottom right, #3D5CF2, #00F091);
+ }
+  
+  .projectIcon {
+    width: 100%;
+    height: 99%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.loginSection {
+    width: 30%;
+    max-width: 450px;
+    min-width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: absolute;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .12), 0 2px 8px 0 rgba(0, 0, 0, .34);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(10px);
+}
+  
+.loginHeader {
+  margin-bottom: 40px;
+  
+    .header {
+      font-size: 30px;
+      font-weight: bold;
+      color: #2f3742;
+      margin-bottom: 5px;
+      margin-top: 0px;
+    }
+  
+    .subtitle {
+    //   color: #676768;
+        color: #3D5CF2;
+        // color: #523AEA;
+        font-size: 18px;
+    }
+  }
+  
+  .loginFields {
+    padding: 50px 40px;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .loginForm {
+    --mat-form-field-subscript-text-line-height: 0px !important;
+  }
+
+.forms{
+    margin-bottom: 12px;
+}
+
+.usernamePassword{
+    margin: 0px 0px 10px 0px;
+}
+  
+  .loginTags {
+    display: flex;
+    border-radius: 50px;
+    border: 1px solid #4f505496;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+.loginTags:hover{
+    border: 1.3px solid #4f505496;
+    border-color: #4095db;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+.loginInput{
+    width: 100% !important;
+    border-radius: inherit;
+    min-height: 40px;
+    border: transparent;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0px 15px;
+}
+
+.loginInput:focus{
+    outline: none;
+}
+  
+.hideButton, .emailButton {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    border-color: #d6d8db;
+    margin-left: -30px;
+}
+
+.hideButton, .emailButton{
+    color: #44474E !important;
+}
+
+.loginAction {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.loginButton {
+    width: 100%;
+    background-color: #523AEA !important;
+    color: white !important;
+    margin-top: 18px;
+}
+
+.loginButton:focus, .loginButton:hover {
+    background-color: #6952ff !important;
+    color: white !important;
+}
+
+.loginError{
+    border-color: red;
+    color: red;
+    
+    mat-icon{
+        color: red;
+    }
+
+    p{
+        color: red;
+    }
+}
+
+.error {
+    color: black;
+    background-color: #FBECE7;
+    border: 1.5px solid red;
+    padding: 3%;
+    border-radius: 5px;
+    margin: 16px 0px 10px 0px;
+}
+  
+  .mat-dialog-container {
+    background-color: #485061;
+  }
+  
+  ::ng-deep mat-form-field {
+    margin: 2%;
+    width: 25em;
+  }
